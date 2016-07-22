@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hibernate-layer.iml" filepath="$PROJECT_DIR$/.idea/modules/hibernate-layer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hibernate-layer_main.iml" filepath="$PROJECT_DIR$/.idea/modules/hibernate-layer_main.iml" group="hibernate-layer" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hibernate-layer_test.iml" filepath="$PROJECT_DIR$/.idea/modules/hibernate-layer_test.iml" group="hibernate-layer" />
+    </modules>
+  </component>
+</project>
