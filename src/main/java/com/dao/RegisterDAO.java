@@ -22,4 +22,13 @@ public interface RegisterDAO {
      * @throws Exception
      */
     Register getRecord(final Long phoneNo) throws Exception;
+
+    /**
+     * DAO method to update otp
+     *
+     * @param otp
+     * @throws Exception
+     */
+    void updateOTP(final Register register, final String otp) throws Exception;
+
 }

@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Created by manish on 19/7/16.
+ * RegisterDAOImpl
  */
 public class RegisterDAOImpl extends HibernateDaoSupport implements RegisterDAO{
 
@@ -46,9 +46,23 @@ public class RegisterDAOImpl extends HibernateDaoSupport implements RegisterDAO{
             logger.info(String.format("Record for phoneNo [%s] is [%s]", phoneNo, record));
             return record;
         } catch (Exception e) {
-            logger.info(String.format("Fetching Record from DB failed for phoneNo [%s]", phoneNo));
+            logger.error(String.format("Fetching Record from DB failed for phoneNo [%s]", phoneNo));
             throw  e;
         }
+    }
+
+    @Transactional
+    public void updateOTP(Register register,  String otp) throws Exception {
+        try {
+            register.setOtp(otp);
+
+            getHibernateTemplate().update(register);
+            logger.info(String.format("otp updated for phone No. [%s]", register.getPhoneNo()));
+        } catch (Exception e) {
+            logger.error(String.format("otp Not updated for phone No. [%s]", register.getPhoneNo()));
+            throw  e;
+        }
+
     }
 
 

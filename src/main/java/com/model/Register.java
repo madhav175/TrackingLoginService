@@ -22,6 +22,18 @@ public class Register {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "OTP")
+    private String otp;
+
+    public void setOtp(String otp) {
+        this.otp = otp;
+    }
+
+    public String getOtp() {
+
+        return otp;
+    }
+
     public String getName() {
         return name;
     }

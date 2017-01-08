@@ -1,5 +1,9 @@
 package com.configuration;
 
+import com.dao.EventDAO;
+import com.dao.GroupDAO;
+import com.dao.Impl.EventDAOImpl;
+import com.dao.Impl.GroupDAOImpl;
 import com.dao.Impl.RegisterDAOImpl;
 import com.dao.RegisterDAO;
 import org.hibernate.SessionFactory;
@@ -63,6 +67,20 @@ public class HibernateConfiguration {
     @Bean(name = "registerDao")
     public RegisterDAO providesRegisterDAO(SessionFactory sessionFactory) {
         RegisterDAOImpl dao =  new RegisterDAOImpl();
+        dao.setSessionFactory(sessionFactory);
+        return dao;
+    }
+
+    @Bean(name = "eventDao")
+    public EventDAO providesEventDAO(SessionFactory sessionFactory) {
+        EventDAOImpl dao = new EventDAOImpl();
+        dao.setSessionFactory(sessionFactory);
+        return dao;
+    }
+
+    @Bean(name = "groupDao")
+    public GroupDAO providesGroupDAO(SessionFactory sessionFactory) {
+        GroupDAOImpl dao = new GroupDAOImpl();
         dao.setSessionFactory(sessionFactory);
         return dao;
     }
